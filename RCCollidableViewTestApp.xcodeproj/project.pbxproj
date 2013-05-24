@@ -1,0 +1,290 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		96A42A07174FC2CB00CDE0A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A42A06174FC2CB00CDE0A8 /* UIKit.framework */; };
+		96A42A09174FC2CB00CDE0A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A42A08174FC2CB00CDE0A8 /* Foundation.framework */; };
+		96A42A0B174FC2CB00CDE0A8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A42A0A174FC2CB00CDE0A8 /* CoreGraphics.framework */; };
+		96A42A11174FC2CB00CDE0A8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96A42A0F174FC2CB00CDE0A8 /* InfoPlist.strings */; };
+		96A42A13174FC2CB00CDE0A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A42A12174FC2CB00CDE0A8 /* main.m */; };
+		96A42A17174FC2CB00CDE0A8 /* RCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96A42A16174FC2CB00CDE0A8 /* RCAppDelegate.m */; };
+		96A42A19174FC2CB00CDE0A8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A42A18174FC2CB00CDE0A8 /* Default.png */; };
+		96A42A1B174FC2CB00CDE0A8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A42A1A174FC2CB00CDE0A8 /* Default@2x.png */; };
+		96A42A1D174FC2CB00CDE0A8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 96A42A1C174FC2CB00CDE0A8 /* Default-568h@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		96A42A03174FC2CB00CDE0A8 /* RCCollidableViewTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCCollidableViewTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96A42A06174FC2CB00CDE0A8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		96A42A08174FC2CB00CDE0A8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		96A42A0A174FC2CB00CDE0A8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		96A42A0E174FC2CB00CDE0A8 /* RCCollidableViewTestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RCCollidableViewTestApp-Info.plist"; sourceTree = "<group>"; };
+		96A42A10174FC2CB00CDE0A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		96A42A12174FC2CB00CDE0A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		96A42A14174FC2CB00CDE0A8 /* RCCollidableViewTestApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCCollidableViewTestApp-Prefix.pch"; sourceTree = "<group>"; };
+		96A42A15174FC2CB00CDE0A8 /* RCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCAppDelegate.h; sourceTree = "<group>"; };
+		96A42A16174FC2CB00CDE0A8 /* RCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCAppDelegate.m; sourceTree = "<group>"; };
+		96A42A18174FC2CB00CDE0A8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		96A42A1A174FC2CB00CDE0A8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		96A42A1C174FC2CB00CDE0A8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96A42A00174FC2CB00CDE0A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96A42A07174FC2CB00CDE0A8 /* UIKit.framework in Frameworks */,
+				96A42A09174FC2CB00CDE0A8 /* Foundation.framework in Frameworks */,
+				96A42A0B174FC2CB00CDE0A8 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		96A429FA174FC2CB00CDE0A8 = {
+			isa = PBXGroup;
+			children = (
+				96A42A0C174FC2CB00CDE0A8 /* RCCollidableViewTestApp */,
+				96A42A05174FC2CB00CDE0A8 /* Frameworks */,
+				96A42A04174FC2CB00CDE0A8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		96A42A04174FC2CB00CDE0A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96A42A03174FC2CB00CDE0A8 /* RCCollidableViewTestApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96A42A05174FC2CB00CDE0A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96A42A06174FC2CB00CDE0A8 /* UIKit.framework */,
+				96A42A08174FC2CB00CDE0A8 /* Foundation.framework */,
+				96A42A0A174FC2CB00CDE0A8 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96A42A0C174FC2CB00CDE0A8 /* RCCollidableViewTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				96A42A15174FC2CB00CDE0A8 /* RCAppDelegate.h */,
+				96A42A16174FC2CB00CDE0A8 /* RCAppDelegate.m */,
+				96A42A0D174FC2CB00CDE0A8 /* Supporting Files */,
+			);
+			path = RCCollidableViewTestApp;
+			sourceTree = "<group>";
+		};
+		96A42A0D174FC2CB00CDE0A8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				96A42A0E174FC2CB00CDE0A8 /* RCCollidableViewTestApp-Info.plist */,
+				96A42A0F174FC2CB00CDE0A8 /* InfoPlist.strings */,
+				96A42A12174FC2CB00CDE0A8 /* main.m */,
+				96A42A14174FC2CB00CDE0A8 /* RCCollidableViewTestApp-Prefix.pch */,
+				96A42A18174FC2CB00CDE0A8 /* Default.png */,
+				96A42A1A174FC2CB00CDE0A8 /* Default@2x.png */,
+				96A42A1C174FC2CB00CDE0A8 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96A42A02174FC2CB00CDE0A8 /* RCCollidableViewTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96A42A20174FC2CB00CDE0A8 /* Build configuration list for PBXNativeTarget "RCCollidableViewTestApp" */;
+			buildPhases = (
+				96A429FF174FC2CB00CDE0A8 /* Sources */,
+				96A42A00174FC2CB00CDE0A8 /* Frameworks */,
+				96A42A01174FC2CB00CDE0A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RCCollidableViewTestApp;
+			productName = RCCollidableViewTestApp;
+			productReference = 96A42A03174FC2CB00CDE0A8 /* RCCollidableViewTestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96A429FB174FC2CB00CDE0A8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RC;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Rich Cameron";
+			};
+			buildConfigurationList = 96A429FE174FC2CB00CDE0A8 /* Build configuration list for PBXProject "RCCollidableViewTestApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 96A429FA174FC2CB00CDE0A8;
+			productRefGroup = 96A42A04174FC2CB00CDE0A8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96A42A02174FC2CB00CDE0A8 /* RCCollidableViewTestApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96A42A01174FC2CB00CDE0A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96A42A11174FC2CB00CDE0A8 /* InfoPlist.strings in Resources */,
+				96A42A19174FC2CB00CDE0A8 /* Default.png in Resources */,
+				96A42A1B174FC2CB00CDE0A8 /* Default@2x.png in Resources */,
+				96A42A1D174FC2CB00CDE0A8 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96A429FF174FC2CB00CDE0A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96A42A13174FC2CB00CDE0A8 /* main.m in Sources */,
+				96A42A17174FC2CB00CDE0A8 /* RCAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		96A42A0F174FC2CB00CDE0A8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96A42A10174FC2CB00CDE0A8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		96A42A1E174FC2CB00CDE0A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		96A42A1F174FC2CB00CDE0A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		96A42A21174FC2CB00CDE0A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RCCollidableViewTestApp/RCCollidableViewTestApp-Prefix.pch";
+				INFOPLIST_FILE = "RCCollidableViewTestApp/RCCollidableViewTestApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		96A42A22174FC2CB00CDE0A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RCCollidableViewTestApp/RCCollidableViewTestApp-Prefix.pch";
+				INFOPLIST_FILE = "RCCollidableViewTestApp/RCCollidableViewTestApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96A429FE174FC2CB00CDE0A8 /* Build configuration list for PBXProject "RCCollidableViewTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96A42A1E174FC2CB00CDE0A8 /* Debug */,
+				96A42A1F174FC2CB00CDE0A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96A42A20174FC2CB00CDE0A8 /* Build configuration list for PBXNativeTarget "RCCollidableViewTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96A42A21174FC2CB00CDE0A8 /* Debug */,
+				96A42A22174FC2CB00CDE0A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96A429FB174FC2CB00CDE0A8 /* Project object */;
+}
