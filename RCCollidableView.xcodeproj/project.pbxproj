@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		961DC469174FC39F00D1E4D6 /* RCCollidableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 961DC468174FC39F00D1E4D6 /* RCCollidableView.m */; };
+		961DC46C174FC69C00D1E4D6 /* RCMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 961DC46B174FC69C00D1E4D6 /* RCMainViewController.m */; };
 		96A42A07174FC2CB00CDE0A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A42A06174FC2CB00CDE0A8 /* UIKit.framework */; };
 		96A42A09174FC2CB00CDE0A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A42A08174FC2CB00CDE0A8 /* Foundation.framework */; };
 		96A42A0B174FC2CB00CDE0A8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96A42A0A174FC2CB00CDE0A8 /* CoreGraphics.framework */; };
@@ -19,14 +21,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		96A42A03174FC2CB00CDE0A8 /* RCCollidableViewTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCCollidableViewTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		961DC467174FC39F00D1E4D6 /* RCCollidableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCCollidableView.h; sourceTree = "<group>"; };
+		961DC468174FC39F00D1E4D6 /* RCCollidableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCCollidableView.m; sourceTree = "<group>"; };
+		961DC46A174FC69C00D1E4D6 /* RCMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCMainViewController.h; sourceTree = "<group>"; };
+		961DC46B174FC69C00D1E4D6 /* RCMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCMainViewController.m; sourceTree = "<group>"; };
+		96A42A03174FC2CB00CDE0A8 /* RCCollidableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCCollidableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96A42A06174FC2CB00CDE0A8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		96A42A08174FC2CB00CDE0A8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		96A42A0A174FC2CB00CDE0A8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		96A42A0E174FC2CB00CDE0A8 /* RCCollidableViewTestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RCCollidableViewTestApp-Info.plist"; sourceTree = "<group>"; };
+		96A42A0E174FC2CB00CDE0A8 /* RCCollidableView-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RCCollidableView-Info.plist"; sourceTree = "<group>"; };
 		96A42A10174FC2CB00CDE0A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		96A42A12174FC2CB00CDE0A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		96A42A14174FC2CB00CDE0A8 /* RCCollidableViewTestApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCCollidableViewTestApp-Prefix.pch"; sourceTree = "<group>"; };
+		96A42A14174FC2CB00CDE0A8 /* RCCollidableView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCCollidableView-Prefix.pch"; sourceTree = "<group>"; };
 		96A42A15174FC2CB00CDE0A8 /* RCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCAppDelegate.h; sourceTree = "<group>"; };
 		96A42A16174FC2CB00CDE0A8 /* RCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCAppDelegate.m; sourceTree = "<group>"; };
 		96A42A18174FC2CB00CDE0A8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -51,6 +57,7 @@
 		96A429FA174FC2CB00CDE0A8 = {
 			isa = PBXGroup;
 			children = (
+				96A42A23174FC2D800CDE0A8 /* RCCollidableView */,
 				96A42A0C174FC2CB00CDE0A8 /* RCCollidableViewTestApp */,
 				96A42A05174FC2CB00CDE0A8 /* Frameworks */,
 				96A42A04174FC2CB00CDE0A8 /* Products */,
@@ -60,7 +67,7 @@
 		96A42A04174FC2CB00CDE0A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				96A42A03174FC2CB00CDE0A8 /* RCCollidableViewTestApp.app */,
+				96A42A03174FC2CB00CDE0A8 /* RCCollidableView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,6 +87,8 @@
 			children = (
 				96A42A15174FC2CB00CDE0A8 /* RCAppDelegate.h */,
 				96A42A16174FC2CB00CDE0A8 /* RCAppDelegate.m */,
+				961DC46A174FC69C00D1E4D6 /* RCMainViewController.h */,
+				961DC46B174FC69C00D1E4D6 /* RCMainViewController.m */,
 				96A42A0D174FC2CB00CDE0A8 /* Supporting Files */,
 			);
 			path = RCCollidableViewTestApp;
@@ -88,10 +97,10 @@
 		96A42A0D174FC2CB00CDE0A8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				96A42A0E174FC2CB00CDE0A8 /* RCCollidableViewTestApp-Info.plist */,
+				96A42A0E174FC2CB00CDE0A8 /* RCCollidableView-Info.plist */,
 				96A42A0F174FC2CB00CDE0A8 /* InfoPlist.strings */,
 				96A42A12174FC2CB00CDE0A8 /* main.m */,
-				96A42A14174FC2CB00CDE0A8 /* RCCollidableViewTestApp-Prefix.pch */,
+				96A42A14174FC2CB00CDE0A8 /* RCCollidableView-Prefix.pch */,
 				96A42A18174FC2CB00CDE0A8 /* Default.png */,
 				96A42A1A174FC2CB00CDE0A8 /* Default@2x.png */,
 				96A42A1C174FC2CB00CDE0A8 /* Default-568h@2x.png */,
@@ -99,12 +108,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		96A42A23174FC2D800CDE0A8 /* RCCollidableView */ = {
+			isa = PBXGroup;
+			children = (
+				961DC467174FC39F00D1E4D6 /* RCCollidableView.h */,
+				961DC468174FC39F00D1E4D6 /* RCCollidableView.m */,
+			);
+			path = RCCollidableView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		96A42A02174FC2CB00CDE0A8 /* RCCollidableViewTestApp */ = {
+		96A42A02174FC2CB00CDE0A8 /* RCCollidableView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 96A42A20174FC2CB00CDE0A8 /* Build configuration list for PBXNativeTarget "RCCollidableViewTestApp" */;
+			buildConfigurationList = 96A42A20174FC2CB00CDE0A8 /* Build configuration list for PBXNativeTarget "RCCollidableView" */;
 			buildPhases = (
 				96A429FF174FC2CB00CDE0A8 /* Sources */,
 				96A42A00174FC2CB00CDE0A8 /* Frameworks */,
@@ -114,9 +132,9 @@
 			);
 			dependencies = (
 			);
-			name = RCCollidableViewTestApp;
+			name = RCCollidableView;
 			productName = RCCollidableViewTestApp;
-			productReference = 96A42A03174FC2CB00CDE0A8 /* RCCollidableViewTestApp.app */;
+			productReference = 96A42A03174FC2CB00CDE0A8 /* RCCollidableView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -129,7 +147,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Rich Cameron";
 			};
-			buildConfigurationList = 96A429FE174FC2CB00CDE0A8 /* Build configuration list for PBXProject "RCCollidableViewTestApp" */;
+			buildConfigurationList = 96A429FE174FC2CB00CDE0A8 /* Build configuration list for PBXProject "RCCollidableView" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -141,7 +159,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				96A42A02174FC2CB00CDE0A8 /* RCCollidableViewTestApp */,
+				96A42A02174FC2CB00CDE0A8 /* RCCollidableView */,
 			);
 		};
 /* End PBXProject section */
@@ -167,6 +185,8 @@
 			files = (
 				96A42A13174FC2CB00CDE0A8 /* main.m in Sources */,
 				96A42A17174FC2CB00CDE0A8 /* RCAppDelegate.m in Sources */,
+				961DC469174FC39F00D1E4D6 /* RCCollidableView.m in Sources */,
+				961DC46C174FC69C00D1E4D6 /* RCMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,9 +266,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RCCollidableViewTestApp/RCCollidableViewTestApp-Prefix.pch";
-				INFOPLIST_FILE = "RCCollidableViewTestApp/RCCollidableViewTestApp-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "RCCollidableViewTestApp/RCCollidableView-Prefix.pch";
+				INFOPLIST_FILE = "RCCollidableViewTestApp/RCCollidableView-Info.plist";
+				PRODUCT_NAME = RCCollidableView;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -257,9 +277,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RCCollidableViewTestApp/RCCollidableViewTestApp-Prefix.pch";
-				INFOPLIST_FILE = "RCCollidableViewTestApp/RCCollidableViewTestApp-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "RCCollidableViewTestApp/RCCollidableView-Prefix.pch";
+				INFOPLIST_FILE = "RCCollidableViewTestApp/RCCollidableView-Info.plist";
+				PRODUCT_NAME = RCCollidableView;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -267,7 +287,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		96A429FE174FC2CB00CDE0A8 /* Build configuration list for PBXProject "RCCollidableViewTestApp" */ = {
+		96A429FE174FC2CB00CDE0A8 /* Build configuration list for PBXProject "RCCollidableView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96A42A1E174FC2CB00CDE0A8 /* Debug */,
@@ -276,13 +296,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		96A42A20174FC2CB00CDE0A8 /* Build configuration list for PBXNativeTarget "RCCollidableViewTestApp" */ = {
+		96A42A20174FC2CB00CDE0A8 /* Build configuration list for PBXNativeTarget "RCCollidableView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				96A42A21174FC2CB00CDE0A8 /* Debug */,
 				96A42A22174FC2CB00CDE0A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
