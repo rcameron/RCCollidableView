@@ -10,7 +10,11 @@
 
 @interface RCCollidableView : UIView
 
-@property (nonatomic) BOOL    bounceVertical;     // defaults to YES
+/** 
+ ** Currently, only one bounce direction is allowed at a time.
+ ** This limitation will be removed once better 2d collisions are implemented
+ */
+@property (nonatomic) BOOL    bounceVertical;     // defaults to NO
 @property (nonatomic) BOOL    bounceHorizontal;   // defaults to YES
 
 @end

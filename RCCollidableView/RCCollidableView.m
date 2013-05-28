@@ -52,7 +52,7 @@
 {
   // Set up bounce defaults
   _bounceHorizontal = YES;
-  _bounceVertical = YES;
+  _bounceVertical = NO;
   
   // Set up scrollview
   _scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
@@ -76,6 +76,7 @@
 - (void)setBounceHorizontal:(BOOL)bounceHorizontal
 {
   _bounceHorizontal = bounceHorizontal;
+  _bounceVertical = bounceHorizontal == YES ? NO : _bounceVertical;
   [self updateBounce];
 }
 
@@ -83,6 +84,7 @@
 - (void)setBounceVertical:(BOOL)bounceVertical
 {
   _bounceVertical = bounceVertical;
+  _bounceHorizontal = bounceVertical == YES ? NO : _bounceHorizontal;
   [self updateBounce];
 }
 
@@ -156,75 +158,10 @@
 ////////////////////////////////////////////////////////
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-  // NSLog(@"scrolling view: %@", ([self.backgroundColor isEqual:[UIColor blueColor]] ? @"Blue" : @"Green"));
-  // Calculate current frame taking into account scroll offset
-  CGPoint offset = scrollView.contentOffset;
-  CGRect myAdjustedFrame = self.frame;
-  CGRect myFrame = self.frame;
-  
-  myAdjustedFrame.origin.x -= offset.x;
-  myAdjustedFrame.origin.y -= offset.y;
-  
-  //NSLog(@"offset = %@", NSStringFromCGPoint(offset));
-  
-  // Look for other collider views in the same superview
-  for (UIView *aView in [self.superview subviews]) {
-    if ([aView isEqual:self])
-      continue;
-    
-    if ([aView isMemberOfClass:[RCCollidableView class]]) {
-      RCCollidableView *collideView = (RCCollidableView *)aView;
-      CGRect yourFrame = collideView.frame;
-      CGRect yourAdjustedFrame = yourFrame;
-      yourAdjustedFrame.origin.x -= collideView.scrollView.contentOffset.x;
-      yourAdjustedFrame.origin.y -= collideView.scrollView.contentOffset.y;
-      
-      BOOL intersects = CGRectIntersectsRect(myAdjustedFrame, yourFrame);
-      
-      if (intersects) {
-        CGPoint newOffset = collideView.scrollView.contentOffset;
-        
-        BOOL canCollideHorizontal = CGRectGetMinX(myFrame) >= CGRectGetMaxX(yourFrame) || CGRectGetMaxX(myFrame) <= CGRectGetMinX(yourFrame);
-        BOOL canCollideVertical = CGRectGetMinY(myFrame) >= CGRectGetMaxY(yourFrame) || CGRectGetMaxY(myFrame) <= CGRectGetMinY(yourFrame);
-        
-        if (canCollideHorizontal) {
-          BOOL didCollideHorizontal = CGRectGetMinX(myAdjustedFrame) <= CGRectGetMaxX(yourAdjustedFrame) ||
-          CGRectGetMaxX(myAdjustedFrame) >= CGRectGetMinX(yourAdjustedFrame);
-          
-          if (didCollideHorizontal) {
-            
-            CGFloat leftDiff = CGRectGetMaxX(yourAdjustedFrame) - CGRectGetMinX(myAdjustedFrame);
-            CGFloat rightDiff = CGRectGetMaxX(myAdjustedFrame) - CGRectGetMinX(yourAdjustedFrame);
-            
-            NSLog(@"horizontal: %f | %f", leftDiff, rightDiff);
-            
-            if (leftDiff > 0 && leftDiff < myFrame.size.width)
-              newOffset.x += leftDiff;
-            else if (rightDiff > 0 && rightDiff < myFrame.size.width)
-              newOffset.x -= rightDiff;
-          }
-        }
-        
-        if (canCollideVertical) {
-          BOOL didCollideVertical = CGRectGetMinY(myAdjustedFrame) < CGRectGetMaxY(yourAdjustedFrame) ||
-          CGRectGetMaxY(myAdjustedFrame) > CGRectGetMinY(yourAdjustedFrame);
-          
-          if (didCollideVertical) {
-            
-            CGFloat topDiff = CGRectGetMaxY(yourAdjustedFrame) - CGRectGetMinY(myAdjustedFrame);
-            CGFloat bottomDiff = CGRectGetMaxY(myAdjustedFrame) - CGRectGetMinY(yourAdjustedFrame);
-            
-            if (topDiff > 0 && topDiff < myFrame.size.height)
-              newOffset.y += topDiff;
-            else if (bottomDiff > 0 && bottomDiff < myFrame.size.height)
-              newOffset.y -= bottomDiff;
-          }
-        }
-        
-        [collideView.scrollView setContentOffset:newOffset];
-      }
-    }
-  }
+  if (_bounceHorizontal)
+    [self handleHorizontalCollisions];
+  else if (_bounceVertical)
+    [self handleVerticalCollisions];
 }
 
 ////////////////////////////////////////////////////////
@@ -236,8 +173,91 @@
     
     if ([aView isMemberOfClass:[RCCollidableView class]]) {
       RCCollidableView *collideView = (RCCollidableView *)aView;
-      [collideView.scrollView setContentOffset:CGPointZero];
+      [collideView.scrollView setContentOffset:CGPointZero animated:YES];
     }
+  }
+}
+
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+#pragma mark - Collision Handling
+////////////////////////////////////////////////////////
+- (void)handleHorizontalCollisions
+{
+  CGRect myAdjustedFrame = self.frame;
+  CGPoint myOffset = _scrollView.contentOffset;
+  
+  myAdjustedFrame.origin.x -= myOffset.x;
+  myAdjustedFrame.origin.y -= myOffset.y;
+  
+  // Loop through all subviews
+  for (UIView *aView in [self.superview subviews]) {
+    // Skip ourself
+    if ([aView isEqual:self])
+      continue;
+    
+    // Make sure we're looking at another collidable view
+    if (![aView isKindOfClass:[RCCollidableView class]])
+      continue;
+    
+    // Cast the view to our class
+    RCCollidableView *collideView = (RCCollidableView *)aView;
+  
+    // Check for a collision
+    CGRect collideFrame = collideView.frame;
+    CGRect intersection = CGRectIntersection(myAdjustedFrame, collideFrame);
+    
+    if (CGRectIsNull(intersection)) {
+      continue;
+    }
+    
+    // Get offset from intersection rect
+    CGPoint collideOffset = CGPointZero;
+    collideOffset.x = intersection.size.width;
+    collideOffset.x *= (myOffset.x < 0) ? -1 : 1; // flip the sign if we're moving to the right
+    
+    [collideView.scrollView setContentOffset:collideOffset animated:NO];
+  }
+}
+
+////////////////////////////////////////////////////////
+- (void)handleVerticalCollisions
+{
+  CGRect myAdjustedFrame = self.frame;
+  CGPoint myOffset = _scrollView.contentOffset;
+  
+  NSLog(@"offset = %@", NSStringFromCGPoint(myOffset));
+  
+  myAdjustedFrame.origin.x -= myOffset.x;
+  myAdjustedFrame.origin.y -= myOffset.y;
+  
+  // Loop through all subviews
+  for (UIView *aView in [self.superview subviews]) {
+    // Skip ourself
+    if ([aView isEqual:self])
+      continue;
+    
+    // Make sure we're looking at another collidable view
+    if (![aView isKindOfClass:[RCCollidableView class]])
+      continue;
+    
+    // Cast the view to our class
+    RCCollidableView *collideView = (RCCollidableView *)aView;
+    
+    // Check for a collision
+    CGRect collideFrame = collideView.frame;
+    CGRect intersection = CGRectIntersection(myAdjustedFrame, collideFrame);
+    
+    if (CGRectIsNull(intersection)) {
+      continue;
+    }
+    
+    // Get offset from intersection rect
+    CGPoint collideOffset = CGPointZero;
+    collideOffset.y = intersection.size.height;
+    collideOffset.y *= (myOffset.y < 0) ? -1 : 1; // flip the sign if we're moving to the right
+    
+    [collideView.scrollView setContentOffset:collideOffset animated:NO];
   }
 }
 
