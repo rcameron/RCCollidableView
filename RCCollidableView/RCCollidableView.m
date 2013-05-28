@@ -94,12 +94,29 @@
 ////////////////////////////////////////////////////////
 /*
  ========================
- willMoveToSuperview
- Description: Set up scrollView and contentView to match self
+ didMoveToSuperview
+ Description: Moves our scrollview to the superview in place of self
  ========================
  */
-- (void)willMoveToSuperview:(UIView *)newSuperview
+- (void)didMoveToSuperview
 {
+  // Add our scrollview in place of self
+  [self.superview addSubview:_scrollView];
+  
+  // Hide self, but don't remove from superview or else it may get released!
+  [self setHidden:YES];
+}
+
+/*
+ ========================
+ layoutSubviews
+ Description: Set up and rebuild scrollView and contentView
+ ========================
+ */
+- (void)layoutSubviews
+{
+  [super layoutSubviews];
+  
   // Clear out scroll view
   for (UIView *aView in _scrollView.subviews)
     [aView removeFromSuperview];
@@ -113,21 +130,6 @@
   
   // Add content view to scroll view
   [_scrollView addSubview:_contentView];
-}
-
-/*
- ========================
- didMoveToSuperview
- Description: Moves our scrollview to the superview in place of self
- ========================
- */
-- (void)didMoveToSuperview
-{
-  // Add our scrollview in place of self
-  [self.superview addSubview:_scrollView];
-  
-  // Hide self, but don't remove from superview or else it may get released!
-  [self setHidden:YES];
 }
 
 ////////////////////////////////////////////////////////
@@ -225,8 +227,6 @@
 {
   CGRect myAdjustedFrame = self.frame;
   CGPoint myOffset = _scrollView.contentOffset;
-  
-  NSLog(@"offset = %@", NSStringFromCGPoint(myOffset));
   
   myAdjustedFrame.origin.x -= myOffset.x;
   myAdjustedFrame.origin.y -= myOffset.y;
